@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swamini, Will You Be My Valentine?</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Times New Roman', serif;
+    background-color: #fce4ec; 
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    color: #b22222; 
+    margin: 40px 10px 10px 10px;
+    text-align: center;
+  }
+
+  #mainContent {
+    max-width: 1100px;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    justify-content: center;
+    gap: 30px;
+    transition: opacity 0.6s ease;
+  }
+
+  .photos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .photos img {
+    width: 180px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 5px solid white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  }
+
+  .text-section {
+    max-width: 450px;
+    text-align: center;
+    align-self: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+  }
+
+  p {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    font-style: italic;
+  }
+
+  .valentine-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  button {
+    background-color: #b22222;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(178, 34, 34, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  button:hover { background-color: #8b0000; transform: translateY(-3px); }
+
+  /* MOBILE RESPONSIVENESS */
+  @media (max-width: 768px) {
+    h1 { font-size: 2.2rem; margin-top: 20px; }
+    
+    #mainContent {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      gap: 20px;
+    }
+
+    .photos {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .photos img {
+      width: 100px;
+      height: 130px;
+      border-width: 3px;
+    }
+
+    .text-section {
+      padding: 15px;
+      width: 90%;
+    }
+
+    p { font-size: 1.1rem; line-height: 1.5; }
+
+    button { padding: 12px 30px; font-size: 1rem; }
+  }
+
+  /* Reveal Screen */
+  #popupMessage {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff0f3;
+    color: #b22222;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  .final-text {
+    font-size: 1.8rem;
+    max-width: 90%;
+    font-weight: bold;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .final-text { font-size: 1.3rem; }
+  }
+
+  .slide-up { animation: slideUp 0.8s ease forwards; }
+  @keyframes slideUp {
+    0% { opacity: 0; transform: translateY(60px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .back-btn {
+    font-size: 1rem;
+    color: #b22222;
+    background: none;
+    border: 2px solid #b22222;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .heart {
+    position: fixed;
+    top: -10vh;
+    font-size: 2rem;
+    user-select: none;
+    z-index: 999;
+    animation: fall linear forwards;
+  }
+
+  @keyframes fall {
+    to { transform: translateY(110vh) translateX(20px); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+<h1 id="mainTitle">Will you be my valentine?❤️</h1>
+
+<div class="container" id="mainContent">
+  <div class="photos left">
+    <img src="https://i.postimg.cc/8cBKgW7s/Whats-App-Image-2026-01-15-at-12-50-26.jpg">
+    <img src="https://i.postimg.cc/Hn4Z15rc/Whats-App-Image-2026-01-25-at-18-02-51.jpg">
+    <img src="https://i.postimg.cc/2yFcNv1Z/Whats-App-Image-2026-01-18-at-17-49-57.jpg">
+  </div>
+
+  <div class="text-section">
+    <p>
+      I love you so much. I love saying those words to you, but more than that, i just love the act of loving you. You are the best thing that has ever happened to my life. Even on my lowest days, when everything feels heavy, the one thing that keeps me moving is the fact that you are a part of my world.
+      You are my treasure and the girl of my dreams, being away from you feels like missing a part of myself. I don’t just want to spend this Valentine’s Day with you,I want every single day until our last breaths. I want to hold your hand through everything life throws at us, until the very end. I know I haven’t always been the best at showing it, but I hold so much love for you in my heart, and I want to spend every day proving that to you. Will you be my Valentine?
+    </p>
+
+    <div class="valentine-buttons">
+      <button id="yesBtn">Yes ❤️</button>
+      <button id="noBtn">No (Definitely Yes) </button>
+    </div>
+  </div>
+
+  <div class="photos right">
+    <img src="https://i.postimg.cc/brHCfbZs/Whats-App-Image-2026-01-19-at-04-09-21.jpg">
+    <img src="https://i.postimg.cc/NF7JvTKF/Whats-App-Image-2026-01-15-at-16-59-10.jpg">
+    <img src="https://i.postimg.cc/B6CHqCCb/Screenshot-(5).png">
+  </div>
+</div>
+
+<div id="popupMessage">
+  <div id="popupText" class="final-text"></div>
+  <button class="back-btn" onclick="goBack()">← Back to your photos</button>
+</div>
+
+<script>
+  const yesBtn = document.getElementById('yesBtn');
+  const noBtn = document.getElementById('noBtn');
+  const popup = document.getElementById('popupMessage');
+  const popupText = document.getElementById('popupText');
+  const mainContent = document.getElementById('mainContent');
+  const mainTitle = document.getElementById('mainTitle');
+  let heartInterval;
+
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.innerHTML = '❤️';
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 5000);
+  }
+
+  function showFinalMessage(text, isYes) {
+    mainContent.style.opacity = "0";
+    mainTitle.style.opacity = "0";
+    
+    setTimeout(() => {
+        mainContent.style.display = "none";
+        mainTitle.style.display = "none";
+        popup.style.display = "flex";
+        popupText.innerHTML = text;
+        if (isYes) heartInterval = setInterval(createHeart, 300);
+        popupText.classList.add('slide-up');
+    }, 500);
+  }
+
+  function goBack() {
+    clearInterval(heartInterval);
+    popup.style.display = "none";
+    mainContent.style.display = "flex";
+    mainTitle.style.display = "block";
+    setTimeout(() => {
+        mainContent.style.opacity = "1";
+        mainTitle.style.opacity = "1";
+    }, 50);
+  }
+
+  yesBtn.addEventListener('click', () => {
+    showFinalMessage("I'm so grateful that I'll get to spend this Valentine's with you, Swamini. I love you and I wish I can spend every Valentine's with you for the rest of my life. ❤️", true);
+  });
+
+  noBtn.addEventListener('click', () => {
+    showFinalMessage("ofc you clicked no, i knew you hated me", false);
+  });
+</script>
+
+</body>
+</html>
